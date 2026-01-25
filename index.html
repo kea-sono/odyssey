@@ -8,8 +8,7 @@
       margin: 0;
       padding: 0;
       font-family: -apple-system, BlinkMacSystemFont, "SF Pro", "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-      background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1920&q=80') no-repeat center center fixed;
-      background-size: cover;
+      background: linear-gradient(to bottom, #ffffff, #b38aff, #000000);
       color: #000;
       text-align: center;
       padding: 60px 20px;
@@ -34,16 +33,18 @@
 
     h2 {
       font-family: 'Tilt Neon', sans-serif;
-      font-weight: 500;
+      font-weight: 600;
       font-size: 24px;
-      color: #333;
+      color: #ffffff;
       margin-top: 30px;
+      text-transform: uppercase;
     }
 
     p {
       font-weight: 400;
       font-size: 18px;
       margin: 8px 0;
+      color: #f0f0f0;
     }
 
     .progress-container {
@@ -83,6 +84,18 @@
       margin-top: 10px;
       font-weight: 600;
     }
+
+    .logo-row {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      margin-top: 40px;
+    }
+
+    .logo-row img {
+      height: 40px;
+      opacity: 0.8;
+    }
   </style>
 </head>
 <body>
@@ -102,10 +115,16 @@
     <p id="countdown"></p>
   </div>
 
-  <div class="glass-box">
-    <h2>About the Project</h2>
+  <div class="glass-box" style="background: rgba(0, 0, 0, 0.7); color: #fff;">
+    <h2>ABOUT THIS PROJECT</h2>
     <p>Capital Stack is the first mission in the <strong>Odyssey</strong> series — a transparent, public push to raise R150,000 by April 30. This repo tracks the journey, the milestones, and the unlock conditions for Phase 2.</p>
     <p><em>The process is the point...</em></p>
+  </div>
+
+  <div class="logo-row">
+    <!-- Paste your logo image tags here -->
+    <!-- Example: <img src="greenlabd400.png" alt="Greenlabd.400"> -->
+    <!-- Example: <img src="hoosin.png" alt="Hoosin"> -->
   </div>
 
   <script>
