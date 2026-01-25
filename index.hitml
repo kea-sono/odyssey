@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Odyssey: Capital Stack</title>
+  <style>
+    .progress-container {
+      width: 100%;
+      background-color: #ddd;
+      border-radius: 10px;
+      margin: 20px 0;
+    }
+    .progress-bar {
+      width: 0%; /* Change this as progress grows */
+      height: 30px;
+      background-color: #4caf50;
+      border-radius: 10px;
+      text-align: center;
+      color: white;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>Odyssey: Capital Stack</h1>
+  <p>Deadline: April 30, 2026</p>
+  <p>Goal: R150,000 / $9,100</p>
+  <p>Current: R0 / $0</p>
+
+  <div class="progress-container">
+    <div class="progress-bar">0%</div>
+  </div>
+</body>
+</html>
