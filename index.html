@@ -86,6 +86,69 @@
       font-weight: 600;
     }
   </style>
+  /* Mobile adjustments */
+@media (max-width: 768px) {
+  body {
+    padding: 30px 10px;
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 32px;   /* smaller title */
+  }
+
+  h2 {
+    font-size: 20px;   /* smaller subtitle */
+  }
+
+  p {
+    font-size: 16px;   /* readable but compact */
+  }
+
+  .glass-box {
+    padding: 20px;
+    margin: 0 auto 20px auto;
+    max-width: 95%;    /* use more of the screen */
+  }
+
+  .progress-container {
+    width: 90%;        /* bar stretches wider on mobile */
+  }
+
+  .progress-bar {
+    height: 25px;      /* slightly slimmer bar */
+    font-size: 14px;
+  }
+
+  .logo-row {
+    flex-direction: column; /* stack logos vertically */
+    gap: 20px;
+  }
+
+  .logo-row img {
+    height: 50px;      /* slightly smaller logos */
+  }
+}
+
+/* Extra small screens (phones under 480px wide) */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 26px;
+  }
+
+  h2 {
+    font-size: 18px;
+  }
+
+  p {
+    font-size: 14px;
+  }
+
+  .progress-bar {
+    font-size: 12px;
+  }
+}
+
 </head>
 <body>
 
