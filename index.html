@@ -47,23 +47,24 @@
     }
 
     .progress-container {
-      width: 60%;
-      margin: 0 auto;
-      background-color: #333;
-      border-radius: 10px;
-      margin-top: 20px;
-    }
+  width: 60%;
+  margin: 0 auto;
+  background-color: transparent;
+  border: 3px solid #000000; /* black outline */
+  border-radius: 10px;
+  margin-top: 20px;
+}
 
-    .progress-bar {
-      width: 0%;
-      height: 30px;
-      background: linear-gradient(90deg, #00ffff, #0066ff);
-      border-radius: 10px;
-      text-align: center;
-      color: #0f0f1a;
-      font-weight: bold;
-      animation: pulse 2s infinite;
-    }
+.progress-bar {
+  width: 0%;
+  height: 30px;
+  background-color: #ffffff; /* white fill */
+  border-radius: 7px;
+  text-align: center;
+  color: #000000;
+  font-weight: bold;
+  animation: pulse 2s infinite;
+}
 
     @keyframes pulse {
       0% { box-shadow: 0 0 5px #00ffff; }
