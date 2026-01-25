@@ -4,14 +4,20 @@
   <title>Odyssey: Capital Stack</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background-color: #0f0f1a;
+      font-family: 'Orbitron', sans-serif; /* futuristic font */
+      background: linear-gradient(135deg, #0f0f1a, #1a1a2e);
       color: #e0e0e0;
       padding: 40px;
     }
     h1 {
       color: #00ffff;
-      font-size: 36px;
+      font-size: 42px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+    h2 {
+      color: #ffcc00;
+      margin-top: 30px;
     }
     .section {
       margin-bottom: 30px;
@@ -23,18 +29,29 @@
       margin: 20px 0;
     }
     .progress-bar {
-      width: 0%;
+      width: 0%; /* update this as progress grows */
       height: 30px;
-      background-color: #00ffff;
+      background: linear-gradient(90deg, #00ffff, #0066ff);
       border-radius: 10px;
       text-align: center;
       color: #0f0f1a;
       font-weight: bold;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0% { box-shadow: 0 0 5px #00ffff; }
+      50% { box-shadow: 0 0 20px #00ffff; }
+      100% { box-shadow: 0 0 5px #00ffff; }
     }
     .unlock {
       margin-top: 10px;
       font-style: italic;
       color: #aaa;
+    }
+    #countdown {
+      font-size: 18px;
+      color: #ffcc00;
+      margin-top: 10px;
     }
   </style>
 </head>
@@ -50,6 +67,7 @@
       <div class="progress-bar">0%</div>
     </div>
     <div class="unlock">🔒 Phase 2 unlocks May 1</div>
+    <p id="countdown"></p>
   </div>
 
   <div class="section">
@@ -57,6 +75,19 @@
     <p>Capital Stack is the first mission in the <strong>Odyssey</strong> series — a transparent, public push to raise R150,000 by April 30. This repo tracks the journey, the milestones, and the unlock conditions for Phase 2.</p>
     <p><em>The process is the point...</em></p>
   </div>
+
+  <script>
+    const deadline = new Date("April 30, 2026 23:59:59").getTime();
+    const x = setInterval(function() {
+      const now = new Date().getTime();
+      const distance = deadline - now;
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      document.getElementById("countdown").innerHTML =
+        "⏳ Countdown: " + days + "d " + hours + "h " + minutes + "m ";
+    }, 1000);
+  </script>
 
 </body>
 </html>
