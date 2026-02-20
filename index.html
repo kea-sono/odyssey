@@ -156,12 +156,13 @@
         "⏳ Countdown: " + days + "d " + hours + "h " + minutes + "m ";
     }, 1000);
 
-    // Progress bar auto-fill
+    // Progress bar auto-fill with minimum width
     const goal = 150000; // Rand goal
     const current = 1000; // Rand current
     const percent = (current / goal) * 100;
     const progressBar = document.getElementById("progress-bar");
-    progressBar.style.width = percent + "%";
+    const displayPercent = percent < 1 ? 1 : percent; // force at least 1% width
+    progressBar.style.width = displayPercent + "%";
     progressBar.textContent = percent.toFixed(2) + "%";
   </script>
 
