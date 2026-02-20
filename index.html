@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <title>ODYSSEY: CAPITAL STACK</title>
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap" rel="stylesheet">
   <style>
@@ -140,3 +141,29 @@
     <h2>About the Project</h2>
     <p>Capital Stack is the first mission in the <strong>Odyssey</strong> series — a transparent, public push to raise R150,000 by April 30. This repo tracks the journey, the milestones, and the unlock conditions for Phase 2.</p>
     <p><em>The process is the point...</em></p>
+  </div>
+
+  <script>
+    // Countdown
+    const deadline = new Date("April 30, 2026 23:59:59").getTime();
+    setInterval(function() {
+      const now = new Date().getTime();
+      const distance = deadline - now;
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      document.getElementById("countdown").innerHTML =
+        "⏳ Countdown: " + days + "d " + hours + "h " + minutes + "m ";
+    }, 1000);
+
+    // Progress bar auto-fill
+    const goal = 150000; // Rand goal
+    const current = 1000; // Rand current
+    const percent = (current / goal) * 100;
+    const progressBar = document.getElementById("progress-bar");
+    progressBar.style.width = percent + "%";
+    progressBar.textContent = percent.toFixed(2) + "%";
+  </script>
+
+</body>
+</html>
