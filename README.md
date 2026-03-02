@@ -17,7 +17,7 @@ Capital Stack is the first mission in the **Odyssey** series — a transparent, 
 
 ## 📊 Progress
 
-- **Current:** R1000 / R150,000  
+- **Current:** R3,474 / $211
 - **Deadline:** April 30, 2026  
 - **Phase 2 Unlock:** At full goal
 
