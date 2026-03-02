@@ -15,7 +15,6 @@
       padding: 60px 20px;
     }
 
-    /* Background video */
     #bg-video {
       position: fixed;
       top: 0;
@@ -96,28 +95,10 @@
       margin-top: 10px;
       font-weight: 600;
     }
-
-    @media (max-width: 768px) {
-      body { padding: 30px 10px; }
-      h1 { font-size: 32px; }
-      h2 { font-size: 20px; }
-      p { font-size: 16px; }
-      .glass-box { max-width: 95%; padding: 20px; margin: 0 auto 20px auto; }
-      .progress-container { width: 90%; }
-      .progress-bar { height: 25px; font-size: 14px; }
-    }
-
-    @media (max-width: 480px) {
-      h1 { font-size: 26px; }
-      h2 { font-size: 18px; }
-      p { font-size: 14px; }
-      .progress-bar { font-size: 12px; }
-    }
   </style>
 </head>
 <body>
 
-  <!-- Background video -->
   <video autoplay muted loop playsinline id="bg-video" poster="https://github.com/kea-sono/odyssey/raw/main/penguin.jpg">
     <source src="https://github.com/kea-sono/odyssey/raw/main/Untitled%20video%20-%20Made%20with%20Clipchamp%20(2).mp4" type="video/mp4">
     Your browser does not support the video tag.
@@ -127,7 +108,7 @@
     <h1>ODYSSEY: CAPITAL STACK</h1>
     <p><strong>Deadline:</strong> April 30, 2026</p>
     <p><strong>Goal:</strong> R150,000 / $9,100</p>
-    <p><strong>Current:</strong> R3,474.24 / $211</p>
+    <p id="current-display"><strong>Current:</strong> R0 / $0</p>
 
     <div class="progress-container">
       <div class="progress-bar" id="progress-bar">0%</div>
@@ -156,10 +137,20 @@
         "⏳ Countdown: " + days + "d " + hours + "h " + minutes + "m ";
     }, 1000);
 
-    // Progress bar auto-fill with minimum width
-    const goal = 150000; // Rand goal
-    const current = 3474.24; // Rand current
-    const percent = (current / goal) * 100;
+    // Progress + USD conversion
+    const goalRand = 150000; // Rand goal
+    const goalUSD = 9100;    // USD goal
+    const exchangeRate = goalUSD / goalRand; // ~0.0607 USD per Rand
+
+    const currentRand = 3474.24; // <-- Update this value only
+    const currentUSD = (currentRand * exchangeRate).toFixed(0);
+
+    // Update display
+    document.getElementById("current-display").innerHTML =
+      "<strong>Current:</strong> R" + currentRand.toLocaleString() + " / $" + currentUSD;
+
+    // Progress bar
+    const percent = (currentRand / goalRand) * 100;
     const progressBar = document.getElementById("progress-bar");
     const displayPercent = percent < 1 ? 1 : percent; // force at least 1% width
     progressBar.style.width = displayPercent + "%";
